@@ -63,7 +63,7 @@ QString GameLauncher::trimmedGame(QString game) {
 
         auto baseDestName = nameList.at( 1 );
 
-        game = QFileInfo( nameList.at( 0 ) ).canonicalPath() + "/" + baseDestName;
+        game = QDir::tempPath() + "/" + baseDestName;
         JlCompress::extractFile( nameList.first(), nameList.at( 1 ), game );
 
     }
